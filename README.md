@@ -8,13 +8,15 @@ Assuming that the name of your main branch is `main`, execute the following comm
 
 ```bash
 git checkout main
+git branch release
 git merge --allow-unrelated-histories --strategy=ours release
 git checkout release
 git merge main
 git push --force origin release
 ```
 
-These commands can be found in the executable bash script `release.sh` in the top level of this project repo.
+The `push` command requires a GitHub username with push access to the repository and a personal access token (if you don't have one or can't
+remember what it is, go to [your GitHub tokens](https://github.com/settings/tokens) to create a new one). These commands can be found in the executable bash script `release.sh` in the top level of this project repo.
 
 To replace `release` with `main` and trigger a new CI/CD pipeline, enter the following at the command line:
 ```bash
